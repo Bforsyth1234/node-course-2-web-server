@@ -2,7 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
-
+const port = process.env.PORT || 3000;
 var app = express();
 hbs.registerPartials(__dirname + '/views/partials')
 app.set('vew engine', 'hbs');
@@ -47,4 +47,4 @@ app.get('/bad', (req, res) => {
         errorMessage: 'Uh oh bad stuff'
     });
 })
-app.listen(3000);
+app.listen(port);
